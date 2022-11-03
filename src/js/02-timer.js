@@ -25,19 +25,23 @@ const datetimePicker = flatpickr('#datetime-picker', options);
 
 disableBtn(startBtn);
 
-datetimePicker.config.onClose.push(function () {
+datetimePicker.config.onClose.push(() => {
   if (Date.now() > new Date(input.value)) {
     startBtn.classList.add('disabled');
-    Notify.failure('Будь ласка, виберіть дату в майбутньому');
+    Notify.failure('Будь ласка, виберіть дату в майбутньому', {
+      position: 'center-top',
+    });
     return;
   }
 
   startBtn.removeAttribute('disabled');
   startBtn.classList.remove('disabled');
-  Notify.success('Дату і час успішно обрано, запускаймо!');
+  Notify.success('Дату і час успішно обрано, запускаймо!', {
+    position: 'center-top',
+  });
 });
 
-datetimePicker.config.onOpen.push(function () {
+datetimePicker.config.onOpen.push(() => {
   startBtn.classList.add('disabled');
   disableBtn(startBtn);
 });
