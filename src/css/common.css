@@ -17,7 +17,22 @@ img {
   max-width: 100%;
 }
 
+input {
+  height: 25px;
+  border: 1px solid darkblue;
+  border-radius: 4px;
+  outline: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .button[data-start] {
+  display: inline-block;
   width: 100px;
   height: 25px;
   background-color: greenyellow;
@@ -30,11 +45,10 @@ img {
   border: 2px solid red;
 }
 
-input {
-  height: 25px;
-  border: 1px solid darkblue;
-  border-radius: 4px;
-  outline: none;
+.timer__input {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
 }
 
 .timer {
