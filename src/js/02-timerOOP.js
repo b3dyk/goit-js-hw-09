@@ -75,7 +75,7 @@ const refs = {
   minutes: document.querySelector('[data-minutes]'),
   seconds: document.querySelector('[data-seconds]'),
 };
-const { input, startBtn, days, hours, minutes, seconds } = refs;
+const { input, startBtn } = refs;
 
 new Timer(refs).init();
 
