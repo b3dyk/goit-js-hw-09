@@ -22,12 +22,8 @@ class PromisesGenerator {
       const callDelay = Number(delay.value) + (i - 1) * Number(step.value);
 
       this.createPromise(i, callDelay)
-        .then(({ position, delay }) =>
-          Notify.success(`Fullfiled promise ${position} in ${delay} ms`)
-        )
-        .catch(({ position, delay }) =>
-          Notify.failure(`Rejected promise ${position} in ${delay} ms`)
-        );
+        .then(this.onSuccess)
+        .catch(this.onFailure);
     }
   }
 
@@ -43,6 +39,14 @@ class PromisesGenerator {
         }
       }, delay);
     });
+  }
+
+  onSuccess({ position, delay }) {
+    return Notify.success(`Fullfiled promise ${position} in ${delay} ms`);
+  }
+
+  onFailure({ position, delay }) {
+    return Notify.failure(`Rejected promise ${position} in ${delay} ms`);
   }
 }
 
