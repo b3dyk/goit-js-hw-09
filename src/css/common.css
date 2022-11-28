@@ -32,13 +32,23 @@ input {
   margin-top: 50px;
 }
 
-.button[data-start] {
+.button[data-start],
+.button[data-stop],
+.button[data-reset] {
   display: inline-block;
   width: 100px;
   height: 25px;
   background-color: greenyellow;
   border: none;
   border-radius: 4px;
+}
+
+.button[data-stop] {
+  background-color: yellow;
+}
+
+.button[data-reset] {
+  background-color: pink;
 }
 
 .button.disabled {
